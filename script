@@ -1,0 +1,43 @@
+local EoHGui = Instance.new("ScreenGui")
+local AskYouExploitFrame = Instance.new("Frame")
+local TEXTOfAYEF = Instance.new("TextLabel")
+local IWTEB = Instance.new("TextButton")
+
+EoHGui.Name = "EoHGui"
+EoHGui.Parent = game.Players.LocalPlayer.PlayerGui
+EoHGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+AskYouExploitFrame.Name = "AskYouExploitFrame"
+AskYouExploitFrame.Parent = EoHGui
+AskYouExploitFrame.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+AskYouExploitFrame.BorderColor3 = Color3.fromRGB(85, 85, 85)
+AskYouExploitFrame.BorderSizePixel = 5
+AskYouExploitFrame.Position = UDim2.new(0.398516506, 0, 0.327606022, 0)
+AskYouExploitFrame.Size = UDim2.new(0.202292651, 0, 0.343642622, 0)
+AskYouExploitFrame.Active = true
+AskYouExploitFrame.Draggable = true
+
+TEXTOfAYEF.Name = "TEXTOfAYEF"
+TEXTOfAYEF.Parent = AskYouExploitFrame
+TEXTOfAYEF.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+TEXTOfAYEF.BorderColor3 = Color3.fromRGB(85, 85, 85)
+TEXTOfAYEF.BorderSizePixel = 5
+TEXTOfAYEF.Size = UDim2.new(1, 0, 0.0766666681, 0)
+TEXTOfAYEF.Font = Enum.Font.Unknown
+TEXTOfAYEF.Text = "Exploit GUI"
+TEXTOfAYEF.TextColor3 = Color3.fromRGB(255, 255, 255)
+TEXTOfAYEF.TextSize = 14.000
+
+IWTEB.Name = "IWTEB"
+IWTEB.Parent = AskYouExploitFrame
+IWTEB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IWTEB.BorderColor3 = Color3.fromRGB(255, 255, 255)
+IWTEB.BorderSizePixel = 5
+IWTEB.Position = UDim2.new(0.0833333358, 0, 0.329999983, 0)
+IWTEB.Size = UDim2.new(0.833333313, 0, 0.336666673, 0)
+IWTEB.Font = Enum.Font.FredokaOne
+IWTEB.Text = "Exploit"
+IWTEB.TextColor3 = Color3.fromRGB(255, 255, 255)
+IWTEB.TextScaled = true
+IWTEB.TextSize = 14.000
+IWTEB.TextWrapped = true
