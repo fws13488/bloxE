@@ -91,39 +91,73 @@ IWTEB.MouseButton1Click:Connect(function()
 	ESP.TextSize = 14.000
 	ESP.TextWrapped = true
 
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local highlight = Instance.new("Highlight")
+	highlight.Name = "Highlight"
+
+	local function onPlayerJoining(player)
+
+		if ESP.Text == "ESP all player (Using)" or ESP.Text == "ESP all player (Loading)" then
+
+			repeat wait() until player.Character
+
+			local highlightClone = highlight:Clone()
+
+			highlightClone.Adornee = player.Character
+
+			highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+
+			highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+			highlightClone.Name = "Highlight"
+
+		end
+
+	end
+
+	local function onPlayerLeaving(player)
+
+		player.Character:FindFirstChild("HumanoidRootPart").Highlight:Destory()
+
+	end
+
 	ESP.MouseButton1Click:Connect(function()
-
-		local ESPTAG = Instance.new("BillboardGui"):Clone()
-
-		ESPTAG.Name = "ESPTAG"
-		ESPTAG.Parent = nil
-		ESPTAG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-		ESPTAG.Active = true
-		ESPTAG.AlwaysOnTop = true
-		ESPTAG.LightInfluence = 3.000
-		ESPTAG.Size = UDim2.new(5, 0, 5, 0)
-		ESPTAG.StudsOffset = Vector3.new(0, 2, 0)
 
 		if ESP.Text == "ESP all players" then
 
-			ESP.Text = "ESP all players (Using)"
+			ESP.Text = "ESP all players (Loading)"
 
-			for number, player in ipairs(game.Players:GetChildren()) do
+			for i, v in ipairs(Players) do
 
-				wait(0.1)
+				repeat wait() until v.Character
 
-				ESPTAG.Parent = player.Character
+				if v.Character:FindFirstChild("HumanoidRootPart").Highlight == nil then
+
+					local highlightClone = highlight:Clone()
+
+					highlightClone.Adornee = v.Character
+
+					highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+
+					highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+					highlightClone.Name = "Highlight"
+
+					task.wait(0.5)
+
+				end
 
 			end
 
-		else
-
-			ESP.Text = "ESP all players"
-
-			ESPTAG:Destroy()
+			ESP.Text = "ESP all players (Using)"
 
 		end
 
 	end)
+
+	game.Players.PlayerAdded:Connect(onPlayerJoining)
+
+	game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 end)
