@@ -91,4 +91,37 @@ IWTEB.MouseButton1Click:Connect(function()
 	ESP.TextSize = 14.000
 	ESP.TextWrapped = true
 
+	ESP.MouseButton1Click:Connect(function()
+
+		local ESPTAG = Instance.new("BillboardGui"):Clone()
+
+		ESPTAG.Name = "ESPTAG"
+		ESPTAG.Parent = game.Workspace.Dummy
+		ESPTAG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		ESPTAG.Active = true
+		ESPTAG.AlwaysOnTop = true
+		ESPTAG.LightInfluence = 3.000
+		ESPTAG.Size = UDim2.new(5, 0, 5, 0)
+		ESPTAG.StudsOffset = Vector3.new(0, 2, 0)
+
+		if ESP.Text == "ESP all players" then
+
+			ESP.Text = "ESP all players (Using)"
+
+			for number, player in ipairs(game.Players:GetChildren()) do
+
+				ESPTAG.Parent = player.Character
+
+			end
+
+		else
+
+			ESP.Text = "ESP all players"
+
+			ESPTAG:Destroy()
+
+		end
+
+	end)
+
 end)
