@@ -96,7 +96,7 @@ IWTEB.MouseButton1Click:Connect(function()
 		local ESPTAG = Instance.new("BillboardGui"):Clone()
 
 		ESPTAG.Name = "ESPTAG"
-		ESPTAG.Parent = game.Workspace.Dummy
+		ESPTAG.Parent = nil
 		ESPTAG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 		ESPTAG.Active = true
 		ESPTAG.AlwaysOnTop = true
