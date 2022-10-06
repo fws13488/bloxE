@@ -49,6 +49,8 @@ IWTEB.MouseButton1Click:Connect(function()
   local TheRealEGui = Instance.new("ScreenGui")
   local MainOfExploitFrame = Instance.new("Frame")
   local TEXT = Instance.new("TextLabel")
+  
+  print("Success")
 
   TheRealEGui.Name = "TheRealEGui"
   TheRealEGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
