@@ -61,9 +61,7 @@ IWTEB.MouseButton1Click:Connect(function()
   MainOfExploitFrame.BorderColor3 = Color3.fromRGB(85, 85, 85)
   MainOfExploitFrame.BorderSizePixel = 5
   MainOfExploitFrame.Position = UDim2.new(0.331085622, 0, 0.213058412, 0)
-  MainOfExploitFrame.Size = UDim2.new(0, 500, 0, 500)
-  MainOfExploitFrame.Active = true
-  MainOfExploitFrame.Draggable = true
+  MainOfExploitFrame.Size = UDim2.new(0.337154418, 0, 0.572737694, 0)
 
   TEXT.Name = "TEXT"
   TEXT.Parent = MainOfExploitFrame
