@@ -98,19 +98,24 @@ IWTEB.MouseButton1Click:Connect(function()
 
 	local function onPlayerJoining(player)
 
-		if ESP.Text == "ESP all player (Using)" or ESP.Text == "ESP all player (Loading)" then
+		if ESP.Text == "ESP all players (Using)" or ESP.Text == "ESP all players (Loading)" then
 
-			repeat wait() until player.Character
+			if not player.Character:FindFirstChild("HumanoidRootPart").Highlight then
 
-			local highlightClone = highlight:Clone()
+				repeat wait() until player.Character
 
-			highlightClone.Adornee = player.Character
+				local highlightClone = highlight:Clone()
 
-			highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+				highlightClone.Adornee = player.Character
 
-			highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+				highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
 
-			highlightClone.Name = "Highlight"
+				highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+				highlightClone.Name = "Highlight"
+
+
+			end
 
 		end
 
@@ -119,6 +124,36 @@ IWTEB.MouseButton1Click:Connect(function()
 	local function onPlayerLeaving(player)
 
 		player.Character:FindFirstChild("HumanoidRootPart").Highlight:Destory()
+
+	end
+
+	local function RunServiceHeartbeat()
+
+		if ESP.Text == "ESP all players (Using)" or ESP.Text == "ESP all players (Loading)" then
+
+			for i, v in ipairs(Players) do
+
+				repeat wait() until v.Character
+
+				if not v.Character:FindFirstChild("HumanoidRootPart").Highlight then
+
+					local highlightClone = highlight:Clone()
+
+					highlightClone.Adornee = v.Character
+
+					highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+
+					highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+					highlightClone.Name = "Highlight"
+
+					task.wait()
+
+				end
+
+			end
+
+		end
 
 	end
 
@@ -132,7 +167,7 @@ IWTEB.MouseButton1Click:Connect(function()
 
 				repeat wait() until v.Character
 
-				if v.Character:FindFirstChild("HumanoidRootPart").Highlight == nil then
+				if not v.Character:FindFirstChild("HumanoidRootPart").Highlight then
 
 					local highlightClone = highlight:Clone()
 
@@ -144,8 +179,6 @@ IWTEB.MouseButton1Click:Connect(function()
 
 					highlightClone.Name = "Highlight"
 
-					task.wait(0.5)
-
 				end
 
 			end
@@ -155,6 +188,8 @@ IWTEB.MouseButton1Click:Connect(function()
 		end
 
 	end)
+
+	RunService.Heartbeat:Connect(RunServiceHeartbeat)
 
 	game.Players.PlayerAdded:Connect(onPlayerJoining)
 
