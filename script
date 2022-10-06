@@ -6,6 +6,7 @@ local IWTEB = Instance.new("TextButton")
 EoHGui.Name = "EoHGui"
 EoHGui.Parent = game.Players.LocalPlayer.PlayerGui
 EoHGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+EoHGui.ResetOnSpawn = false
 
 AskYouExploitFrame.Name = "AskYouExploitFrame"
 AskYouExploitFrame.Parent = EoHGui
@@ -43,7 +44,7 @@ IWTEB.TextSize = 14.000
 IWTEB.TextWrapped = true
 IWTEB.MouseButton1Click:Connect(function()
 
-  EoHGui:Destory()
+  EoHGui:Remove()
 
   local TheRealEGui = Instance.new("ScreenGui")
   local MainOfExploitFrame = Instance.new("Frame")
@@ -52,6 +53,7 @@ IWTEB.MouseButton1Click:Connect(function()
   TheRealEGui.Name = "TheRealEGui"
   TheRealEGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
   TheRealEGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+  TheRealGui.ResetOnSpawn = false
 
   MainOfExploitFrame.Name = "MainOfExploitFrame"
   MainOfExploitFrame.Parent = TheRealEGui
