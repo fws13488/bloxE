@@ -44,7 +44,7 @@ IWTEB.TextSize = 14.000
 IWTEB.TextWrapped = true
 IWTEB.MouseButton1Click:Connect(function()
 
-  EoHGui:Remove()
+  AskYouExploitFrame.Visible = false
 
   local TheRealEGui = Instance.new("ScreenGui")
   local MainOfExploitFrame = Instance.new("Frame")
