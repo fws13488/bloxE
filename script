@@ -83,7 +83,7 @@ IWTEB.MouseButton1Click:Connect(function()
 	ESP.Parent = MainOfExploitFrame
 	ESP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	ESP.Position = UDim2.new(0, 0, 0.0759999976, 0)
-	ESP.Size = UDim2.new(0, 500, 0, 50)
+	ESP.Size = UDim2.new(1, 0, 0.1, 0)
 	ESP.Font = Enum.Font.FredokaOne
 	ESP.Text = "ESP all players"
 	ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
