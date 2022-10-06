@@ -53,7 +53,7 @@ IWTEB.MouseButton1Click:Connect(function()
   TheRealEGui.Name = "TheRealEGui"
   TheRealEGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
   TheRealEGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-  TheRealGui.ResetOnSpawn = false
+  TheRealEGui.ResetOnSpawn = false
 
   MainOfExploitFrame.Name = "MainOfExploitFrame"
   MainOfExploitFrame.Parent = TheRealEGui
