@@ -110,6 +110,8 @@ IWTEB.MouseButton1Click:Connect(function()
 
 			for number, player in ipairs(game.Players:GetChildren()) do
 
+				wait(0.1)
+
 				ESPTAG.Parent = player.Character
 
 			end
